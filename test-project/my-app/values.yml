@@ -1,0 +1,9 @@
+host: test-app.com
+replicaCount: 1
+port: 80
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: latest
