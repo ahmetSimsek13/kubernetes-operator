@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1 
+kind: Ingress 
+metadata: 
+  annotations: 
+    cert-manager.io/cluster-issuer: selfsigned-issuer 
+  name: local-ingress 
+  namespace: my-app-namespace 
+spec: 
+  rules: 
+  - host: {{ .Values.host }}
+    http: 
+      paths: 
+      - backend: 
+          serviceName: my-app-service
+          servicePort: {{ .Values.port }} 
+        path: / 
+  tls: 
+  - hosts: 
+    - {{ .Values.host }
+    secretName: test-app-cert-tls
