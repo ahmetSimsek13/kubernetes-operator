@@ -23,7 +23,3 @@ minikube addons enable ingress
 
 
 -------
-
-chmod 755 helm_install.sh
-
-./helm_install.sh
